@@ -11,9 +11,11 @@ const app = express()
 app.use(express.json());
 app.use(cookieParser())
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
-    credentials: true
-}))
+    origin: [process.env.FRONTEND_URL, 'http://your-production-url.com'],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add other methods if needed
+    allowedHeaders: ['Content-Type', 'Authorization'] // Adjust headers as necessary
+}));
 
 app.use('/api', router)
 
