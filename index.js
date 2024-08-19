@@ -33,4 +33,3 @@ app.get('/', (req, res) => {
     res.send('Hello Brand New E-Commerce Server');
 });
 
-// Access to fetch at 'https://fresh-backend-2b5g.onrender.com/api/category-product' from origin 'https://fresh-front-end.vercel.app' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled
