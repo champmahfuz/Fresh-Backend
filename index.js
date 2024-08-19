@@ -16,7 +16,16 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add other methods if needed
     allowedHeaders: ['Content-Type', 'Authorization'] // Adjust headers as necessary
 }));
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://fresh-front-end.vercel.app');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
 app.use('/api', router)
+
+app.options('/api/category-product', cors());
 
 const PORT = 8080 || process.env.PORT
 
@@ -27,6 +36,9 @@ app.listen(PORT, () => {
     console.log("Server is running")
     // console.log("Server is running " + PORT)
 })
+
+
+
 
 app.get('/', (req, res) => {
     res.send('Hello Brand New E-Commerce Server');
