@@ -17,12 +17,12 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'] // Adjust headers as necessary
 }));
 
-// app.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Origin', 'https://fresh-front-end.vercel.app');
-//     res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
-//     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-//     next();
-// });
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://fresh-front-end.vercel.app');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE', 'https://fresh-front-end.vercel.app');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization', 'https://fresh-front-end.vercel.app');
+    next();
+});
 app.use('/api', router)
 
 app.options('/api/category-product', cors());
