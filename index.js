@@ -26,24 +26,6 @@ app.use((req, res, next) => {
 app.use('/api', router)
 
 app.options('/api/category-product', cors());
-app.options('/api/signup', cors());
-app.options('/api/signin', cors());
-app.options('/api/userLogout', cors());
-app.options('/api/category-product', cors());
-app.options('/api/all-user', cors());
-app.options('/api/update-user', cors());
-app.options('/api/upload-product', cors());
-app.options('/api/get-product', cors());
-app.options('/api/update-product', cors());
-app.options('/api/category-product', cors());
-app.options('/api/product-details', cors());
-app.options('/api/search', cors());
-app.options('/api/filter-product', cors());
-app.options('/api/addtocart', cors());
-app.options('/api/countAddToCartProduct', cors());
-app.options('/api/view-card-product', cors());
-app.options('/api/update-cart-product', cors());
-app.options('/api/delete-cart-product', cors());
 
 
 

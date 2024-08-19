@@ -24,7 +24,11 @@ const filterProductController = require('../controller/product/filterProduct')
 
 
 
-router.post("/signup", userSignUpController)
+// router.post("/signup", userSignUpController)
+router.post("/signup", cors({
+    origin: 'https://fresh-front-end.vercel.app',
+    credentials: true
+}), userSignUpController);
 router.post("/signin", userSignInController)
 router.get("/user-details", authToken, userDetailsController)
 router.get("/userLogout", userLogout)
