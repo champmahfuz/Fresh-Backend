@@ -11,12 +11,11 @@ const app = express()
 app.use(express.json());
 app.use(cookieParser())
 app.use(cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: ['https://fresh-front-end.vercel.app/'], // Replace with your frontend URL
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add other methods if needed
     allowedHeaders: ['Content-Type', 'Authorization'] // Adjust headers as necessary
 }));
-
 app.use('/api', router)
 
 const PORT = 8080 || process.env.PORT
