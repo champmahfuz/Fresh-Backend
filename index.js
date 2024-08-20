@@ -11,7 +11,12 @@ const app = express()
 app.use(express.json());
 app.use(cookieParser())
 
-app.use(cors('*'));
+app.options('*', cors({
+    origin: 'https://fresh-front-end.vercel.app', // Exact frontend URL
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 /* app.use(cors({
     origin: 'https://fresh-front-end.vercel.app', // Replace with your frontend URL
@@ -22,7 +27,7 @@ app.use(cors('*'));
 
 app.use('/api', router)
 
-app.options('/api/category-product', cors());
+// app.options('/api/category-product', cors());
 
 
 
