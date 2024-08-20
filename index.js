@@ -27,7 +27,7 @@ app.options(cors({
 
 app.use('/api', router)
 
-// app.options('/api/category-product', cors());
+app.options('/api/category-product', cors());
 
 
 
