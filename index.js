@@ -10,11 +10,12 @@ const app = express()
 
 app.use(express.json());
 app.use(cookieParser())
+
 app.use(cors({
-    origin: ['https://fresh-front-end.vercel.app/'], // Replace with your frontend URL
+    origin: 'https://fresh-front-end.vercel.app', // Replace with your frontend URL
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add other methods if needed
-    allowedHeaders: ['Content-Type', 'Authorization'] // Adjust headers as necessary
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use('/api', router)
