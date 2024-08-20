@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json());
 app.use(cookieParser())
 
-app.options('*', cors({
+app.options(cors({
     origin: 'https://fresh-front-end.vercel.app', // Exact frontend URL
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
