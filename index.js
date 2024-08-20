@@ -10,7 +10,12 @@ const app = express()
 
 app.use(express.json());
 app.use(cookieParser())
-app.use(cors());
+app.use(cors({
+    origin: ['fresh-front-end.vercel.app',], // Replace with your frontend URL
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add other methods if needed
+    allowedHeaders: ['Content-Type', 'Authorization'] // Adjust headers as necessary
+}));
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'https://fresh-front-end.vercel.app');
